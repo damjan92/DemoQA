@@ -32,6 +32,9 @@ namespace DemoQATest.Pages
 			return AvailabilityUtil.IsEnabledAndDisplayed(UsernameField_login);
 		}
 
+		//new methods with properties
+		//public bool CheckUsernameField_isDisplayedAndEnabled_New => AvailabilityUtil.IsEnabledAndDisplayed(UsernameField_login);
+
 		public bool CheckPasswordField_isDisplayedAndEnabled()
 		{
 			return AvailabilityUtil.IsEnabledAndDisplayed(Password_login);
@@ -67,7 +70,7 @@ namespace DemoQATest.Pages
 			return AvailabilityUtil.IsElementDisplayed(SuccessfulLogInMessage);
 		}
 
-		public void Logout()
+		public void ClickOnLogout()
 		{
 			ClickUtil.Click(LogOutLinkText);
 		}

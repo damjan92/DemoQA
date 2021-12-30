@@ -59,8 +59,7 @@ namespace DemoQATest.Pages
 			string url = TextUtil.GetTextByValue(HeaderSection, Attributes.src);
 			return RestResponseValidation.CheckReturnedStatusCode(url);
 		}
-
-		//Validate logo ‘alt’ attribute is equal to ‘ToolsQA Demo Site ’
+		
 		public string ValidateAltValueOfLogo()
 		{
 			WaitUtil.Waits(ShopToolLogo, Driver);

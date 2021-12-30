@@ -29,6 +29,7 @@ namespace DemoQA.Helpers
 			{
 				return false;
 				throw new NoSuchElementException("Error[OnSendKeys]: Element is unavailable");
+				throw new NullReferenceException("Error[OnSendKeys]: Element is null");
 			}
 			try
 			{
@@ -75,6 +76,7 @@ namespace DemoQA.Helpers
 			else
 			{
 				throw new NoSuchElementException("Error[OnGetText]: Element is unavailable");
+				throw new NullReferenceException("Error[OnGetText]: Element is null");
 			}
 		}
 
@@ -87,8 +89,8 @@ namespace DemoQA.Helpers
 		{
 			if (webElement == null)
 			{
-				Console.WriteLine("Error[Clickon]: Element is null");
-				return false;
+				throw new NullReferenceException("Error[ClickOn]: Element is null");
+				throw new NoSuchElementException("Error[ClickOn]Input element is not available.");
 			}
 			try
 			{
@@ -96,7 +98,7 @@ namespace DemoQA.Helpers
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Error[ClickOn]: " + e.Message);
+				LogUtil.Log("Error[ClickOn]: " + e.Message);
 			}
 			return false;
 		}

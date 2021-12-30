@@ -21,8 +21,7 @@ namespace DemoQA.Helpers
 			SelectElement selectElement = new SelectElement(webElement);
 			if (webElement == null)
 			{
-				Console.WriteLine("Error[SelectOn]Input element is null.");
-				throw new NullReferenceException();
+				throw new NullReferenceException("Error[SelectOn]Input element is null.");
 			}
 			try
 			{
@@ -46,8 +45,7 @@ namespace DemoQA.Helpers
 			SelectElement selectElement = new SelectElement(webElement);
 			if (webElement == null)
 			{
-				Console.WriteLine("Error[SelectOn]Input element is null.");
-				throw new NullReferenceException();
+				throw new NullReferenceException("Error[SelectOn]Input element is null.");
 			}
 			try
 			{
@@ -71,8 +69,7 @@ namespace DemoQA.Helpers
 			SelectElement selectElement = new SelectElement(webElement);
 			if (webElement == null)
 			{
-				Console.WriteLine("Error[SelectOn]Input element is null.");
-				throw new NullReferenceException();
+				throw new NullReferenceException("Error[SelectOn]Input element is null.");
 			}
 			try
 			{
@@ -95,8 +92,7 @@ namespace DemoQA.Helpers
 			SelectElement selectElement = new SelectElement(webElement);
 			if (webElement == null)
 			{
-				Console.WriteLine("Error[SelectOn]Input element is null.");
-				throw new NullReferenceException();
+				throw new NullReferenceException("Error[SelectOn]Input element is null.");
 			}
 			var items = selectElement.Options.Count;
 			Console.WriteLine(items);

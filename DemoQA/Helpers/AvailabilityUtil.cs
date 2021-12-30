@@ -45,7 +45,6 @@ namespace DemoQA.Helpers
 			}
 			else
 			{
-				LogUtil.Log("[IsEnabled] Field is not enabled");
 				throw new ElementNotVisibleException("Error[IsEnabled]: Element is disabled");
 			}
 		}
@@ -65,7 +64,6 @@ namespace DemoQA.Helpers
 			}
 			else
 			{
-				Console.WriteLine("[IsEnabledAndDisplayed] Field is not enabled nor displayed");
 				throw new NoSuchElementException("Error[IsEnabledAndDisplayed]: Element is not displayed");
 				throw new ElementNotVisibleException("Error[IsEnabledAndDisplayed]: Element is not displayed");
 			}

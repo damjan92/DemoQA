@@ -21,8 +21,8 @@ namespace DemoQA.Helpers
 			WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
 			if (webElement == null)
 			{
-				Console.WriteLine("Error[WaitClickOn]Input element is null.");
-				return false;
+				throw new NullReferenceException("Error[WaitClickOn]Input element is null.");
+				throw new NoSuchElementException("Error[WaitClickOn]Input element is not available.");
 			}
 			try
 			{
@@ -38,7 +38,7 @@ namespace DemoQA.Helpers
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Error[ClickOn]" + e.Message);
+				LogUtil.Log("Error[ClickOn]" + e.Message);
 			}
 			return false;
 		}
@@ -54,8 +54,8 @@ namespace DemoQA.Helpers
 			WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
 			if (webElement == null)
 			{
-				LogUtil.Log("Error[WaitsClickOn]Input element is null.");
-				return false;
+				throw new NullReferenceException("Error[WaitClickOn]Input element is null.");
+				throw new NoSuchElementException("Error[WaitClickOn]Input element is not available.");
 			}
 			try
 			{
@@ -63,7 +63,7 @@ namespace DemoQA.Helpers
 				{
 					if (!webElement.Displayed)
 					{
-						Console.WriteLine("Element is disappear");
+						LogUtil.Log("Element is disappear");
 						return webElement;
 					}
 					return null;
@@ -71,7 +71,7 @@ namespace DemoQA.Helpers
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Error[ClickOn]" + e.Message);
+				LogUtil.Log("Error[ClickOn]" + e.Message);
 			}
 			return false;
 		}

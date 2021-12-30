@@ -20,8 +20,8 @@ namespace DemoQA.Helpers
 		{
 			if (element == null)
 			{
-				Console.WriteLine("Error[ClickOn]Input element is null.");
-				throw new NullReferenceException();
+				throw new NoSuchElementException("Error[ClickOn]Input element is available.");
+				throw new NullReferenceException("Error[ClickOn]Input element is null.");
 			}
 			try
 			{
@@ -31,7 +31,7 @@ namespace DemoQA.Helpers
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Error[ClickOn]: " + e.Message);
+				LogUtil.Log("Error[ClickOn]: " + e.Message);
 			}
 			return false;
 		}
