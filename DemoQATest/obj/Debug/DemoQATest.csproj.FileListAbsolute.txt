@@ -19,3 +19,4 @@ C:\Users\DamjanDosen\source\repos\DemoQA\DemoQATest\obj\Debug\DemoQATest.dll
 C:\Users\DamjanDosen\source\repos\DemoQA\DemoQATest\obj\Debug\DemoQATest.pdb
 C:\Users\DamjanDosen\source\repos\DemoQA\DemoQATest\bin\Debug\RestSharp.dll
 C:\Users\DamjanDosen\source\repos\DemoQA\DemoQATest\bin\Debug\RestSharp.xml
+C:\Users\DamjanDosen\source\repos\DemoQA\DemoQATest\bin\Debug\DemoQATest.dll.config

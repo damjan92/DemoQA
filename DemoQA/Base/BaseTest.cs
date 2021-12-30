@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using System;
 using DemoQA.Enums;
+using DemoQA.Helpers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,47 +18,33 @@ namespace DemoQA.Base
 
 		public static IWebDriver Driver;
 
-		//private IWebDriver InitializeDriver(BrowserType browserType)
-		//{
-		//	switch (browserType)
-		//	{
-		//		case BrowserType.Chrome:
-		//			return new ChromeDriver(@"C:\Paths");
-		//		case BrowserType.Firefox:
-		//			return new FirefoxDriver(@"C'\Paths");
-		//		case BrowserType.Edge:
-		//			return new EdgeDriver();
-		//		default:
-		//			throw new ArgumentException($"Unknown argument value {browserType}", nameof(browserType));
-		//	}
-		//}
 
 		[OneTimeSetUp]
 		public void Prepare()
 		{
-			Console.WriteLine("--Running OneTimeSetUp--");
+			LogUtil.Log("--Running OneTimeSetUp--");
 		}
 
 		[SetUp]
 		public void Setup()
 		{
-			Driver = BrowserFactory.InitializeDriver(BrowserType.Chrome);
+			Driver = BrowserFactory.InitializeDriver(BrowserType.Firefox);
 			Driver.Manage().Window.Maximize();
-			Console.WriteLine("--SetUp--");
+			LogUtil.Log("--SetUp--");
 		}
 
 		[TearDown]
 		public void Close()
 		{
 			Driver.Quit();
-			Console.WriteLine("--TeadDown--");
+			LogUtil.Log("--TeadDown--");
 		}
 
 		[OneTimeTearDown]
 		public void Clean()
 		{
 			Driver.Quit();
-			Console.WriteLine("--OneTimeTearDown--");
+			LogUtil.Log("--OneTimeTearDown--");
 		}
 	}
 }

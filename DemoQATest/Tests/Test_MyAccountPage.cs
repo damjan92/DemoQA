@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DemoQA.ConfigFiles;
 
 namespace DemoQATest.Tests
 {
@@ -16,15 +17,15 @@ namespace DemoQATest.Tests
 		//Test 1
 		//Validate elements are displayed on page
 		//Validate header title is ‘My account’
-		[TestCase("damjan.dosen@exlrt.com", "12345.abcde"), Category("Valid Credentials")]
-		public void Test_1_AreElemetsVisibleAndHeaderContaintProvidedTitle(string username, string password)
+		[Test]
+		public void Test_1_AreElemetsVisibleAndHeaderContaintProvidedTitle()
 		{
 			LoginPage loginPage = new LoginPage(Driver);
 			MyAccountPage myAccountPage = new MyAccountPage(Driver);
-			string loginPageUrl = "https://shop.demoqa.com/my-account/";
+			string loginPageUrl = ConfigReader.UrlLogin;
 			BasePage.OpenPage(loginPageUrl);
 			BasePage.ClickDismiss();
-			loginPage.EnterCredentials(username, password);
+			loginPage.EnterCredentials(ConfigReader.Username, ConfigReader.Password);
 			Assert.Multiple(() =>
 			{
 				Assert.IsTrue(myAccountPage.IsLogoVisibleOnMyAccountPage(), "Logo is not visible");
@@ -38,29 +39,29 @@ namespace DemoQATest.Tests
 			
 		//Test_2:
 		//Check welcome message contains your username
-		[TestCase("damjan.dosen@exlrt.com", "12345.abcde"), Category("Valid Credentials")]
-		public void Test_2_IsWelecomeMessageVisibleAfterLogIn(string username, string password)
+		[Test]
+		public void Test_2_IsWelecomeMessageVisibleAfterLogIn()
 		{
 			LoginPage loginPage = new LoginPage(Driver);
 			MyAccountPage myAccountPage = new MyAccountPage(Driver);
-			string loginPageUrl = "https://shop.demoqa.com/my-account/";
+			string loginPageUrl = ConfigReader.UrlLogin;
 			BasePage.OpenPage(loginPageUrl);
 			BasePage.ClickDismiss();
-			loginPage.EnterCredentials(username, password);
+			loginPage.EnterCredentials(ConfigReader.Username, ConfigReader.Password);
 			Assert.IsTrue(myAccountPage.IsWelecomeMessageVisibleOnMyAccountPage(), "Welecome message is not visible");
 		}
 
 		//Test3_:
 		//Validate url for header ‘ToolsQA DemoSite’ link element.
-		[TestCase("damjan.dosen@exlrt.com", "12345.abcde"), Category("Valid Credentials")]
-		public void Test_3_CheckUrlOfHeaderLinkAfterLogIn(string username, string password)
+		[Test]
+		public void Test_3_CheckUrlOfHeaderLinkAfterLogIn()
 		{
 			LoginPage loginPage = new LoginPage(Driver);
 			MyAccountPage myAccountPage = new MyAccountPage(Driver);
-			string loginPageUrl = "https://shop.demoqa.com/my-account/";
+			string loginPageUrl = ConfigReader.UrlLogin;
 			BasePage.OpenPage(loginPageUrl);
 			BasePage.ClickDismiss();
-			loginPage.EnterCredentials(username, password);
+			loginPage.EnterCredentials(ConfigReader.Username, ConfigReader.Password);
 			
 			Assert.AreEqual("https://shop.demoqa.com/", myAccountPage.CheckUrlAfterClickOnHeaderLink(), "URL doesn't match");
 		}

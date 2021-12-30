@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using DemoQATest.Pages;
+using DemoQA.ConfigFiles;
 
 namespace DemoQATest.Tests
 {
@@ -16,7 +17,7 @@ namespace DemoQATest.Tests
 		public void Test_1_AreInputFieldEnabledAndDisplayed()
 		{
 			LoginPage loginPage = new LoginPage(Driver);
-			string loginPageUrl = "https://shop.demoqa.com/my-account/";
+			string loginPageUrl = ConfigReader.UrlLogin;
 			BasePage.OpenPage(loginPageUrl);
 			BasePage.ClickDismiss();
 
@@ -29,15 +30,15 @@ namespace DemoQATest.Tests
 		}
 
 		
-		[TestCase("damjan.dosen@exlrt.com", "12345.abcde"), Category("Valid Credentials")]
-		public void Test_2_EnterValidCredentials(string username, string password)
+		[Test]
+		public void Test_2_EnterValidCredentials()
 		{
 			LoginPage loginPage = new LoginPage(Driver);
-			string loginPageUrl = "https://shop.demoqa.com/my-account/";
+			string loginPageUrl = ConfigReader.UrlLogin;
 			BasePage.OpenPage(loginPageUrl);
 			BasePage.ClickDismiss();
 
-			loginPage.EnterCredentials(username, password);
+			loginPage.EnterCredentials(ConfigReader.Username, ConfigReader.Password);
 			Assert.IsTrue(loginPage.SuccessStatusLogin(), "Success");
 		}
 
@@ -49,7 +50,7 @@ namespace DemoQATest.Tests
 		public void Test_3_EnterInvalidCredentials(string username, string password)
 		{
 			LoginPage loginPage = new LoginPage(Driver);
-			string loginPageUrl = "https://shop.demoqa.com/my-account/";
+			string loginPageUrl = ConfigReader.UrlLogin;
 			BasePage.OpenPage(loginPageUrl);
 			BasePage.ClickDismiss();
 

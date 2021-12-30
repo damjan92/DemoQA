@@ -25,7 +25,7 @@ namespace DemoQA.Base
 		{	
 			if (url == null)
 			{
-				throw new NullReferenceException();
+				throw new NullReferenceException("Error[OpenPage]: URL is null");
 			}
 			try
 			{
@@ -41,7 +41,7 @@ namespace DemoQA.Base
 		{
 			if (Driver.Title == null)
 			{
-				throw new NullReferenceException();
+				throw new NullReferenceException("Error[Base:GetTitle]: Title is null");
 			}
 			else
 			{
@@ -54,7 +54,7 @@ namespace DemoQA.Base
 		{
 			if (Driver.Url == null)
 			{
-				throw new NullReferenceException();
+				throw new NullReferenceException("Error[Base:GetURL]: Get url is null");
 			}
 			else
 			{

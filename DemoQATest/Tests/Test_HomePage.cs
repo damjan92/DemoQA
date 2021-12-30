@@ -8,6 +8,7 @@ using DemoQA.Base;
 using DemoQA.Helpers;
 using NUnit.Framework;
 using DemoQATest.Pages;
+using DemoQA.ConfigFiles;
 
 namespace DemoQATest.Tests
 {
@@ -18,7 +19,7 @@ namespace DemoQATest.Tests
 		public void Test_1_AreElementsVisible()
 		{
 			HomePage homePage = new HomePage(Driver);
-			string homePageUrl = "https://shop.demoqa.com/";
+			string homePageUrl = ConfigReader.Url;
 			BasePage.OpenPage(homePageUrl);
 			BasePage.ClickDismiss();
 
@@ -36,7 +37,7 @@ namespace DemoQATest.Tests
 		public void Test_2_ValidationOfUrlAndAltAttribute()
 		{
 			HomePage homePage = new HomePage(Driver);
-			string homePageUrl = "https://shop.demoqa.com/";
+			string homePageUrl = ConfigReader.Url;
 			BasePage.OpenPage(homePageUrl);
 			BasePage.ClickDismiss();
 			string myaccUrl = "https://shop.demoqa.com/my-account/";
@@ -51,7 +52,7 @@ namespace DemoQATest.Tests
 		public void Test_3_ValidateIsMyAccountPageIsOpened()
 		{
 			HomePage homePage = new HomePage(Driver);
-			string homePageUrl = "https://shop.demoqa.com/";
+			string homePageUrl = ConfigReader.Url;
 			BasePage.OpenPage(homePageUrl);
 			BasePage.ClickDismiss();
 			string myaccUrl = "https://shop.demoqa.com/my-account/";
