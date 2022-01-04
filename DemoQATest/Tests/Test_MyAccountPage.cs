@@ -22,8 +22,8 @@ namespace DemoQATest.Tests
 		{
 			LoginPage loginPage = new LoginPage(Driver);
 			MyAccountPage myAccountPage = new MyAccountPage(Driver);
-			string loginPageUrl = ConfigReader.UrlLogin;
-			BasePage.OpenPage(loginPageUrl);
+			//string loginPageUrl = ConfigReader.UrlLogin;
+			BasePage.OpenPage(ConfigReader.UrlLogin);
 			BasePage.ClickDismiss();
 			loginPage.EnterCredentials(ConfigReader.Username, ConfigReader.Password);
 			Assert.Multiple(() =>

@@ -5,6 +5,7 @@ using System.Text;
 using OpenQA.Selenium;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
+using DemoQA.ConfigFiles;
 
 namespace DemoQA.Helpers
 {

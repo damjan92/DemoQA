@@ -24,7 +24,6 @@ namespace DemoQATest.Pages
 		//Test 1
 		// Validate page title - check from BasePage
 		//Check that these 3 (logo/MyAccount/Header - title)  elements are displayed, also check for one dummy element invisiblity
-
 		public bool IsLogoVisible()
 		{
 			WaitUtil.Waits(ShopToolLogo, Driver);
@@ -45,7 +44,6 @@ namespace DemoQATest.Pages
 
 		//Test 2
 		//Validate url for logo I headerImage elements
-
 		public int CheckUrlOfLogo()
 		{
 			WaitUtil.Waits(ShopToolLogo, Driver);
@@ -66,10 +64,8 @@ namespace DemoQATest.Pages
 			return TextUtil.GetTextByValue(ShopToolLogo, Attributes.alt);
 		}
 
-
 		//Test_3
 		//Click on MyAccount link and validate that you’re on new LoginPage.
-
 		public string ValidationIsLoginPageOpened()
 		{
 			WaitUtil.Waits(MyAccountLinkTopRightNav, Driver);

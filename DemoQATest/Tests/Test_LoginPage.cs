@@ -17,8 +17,8 @@ namespace DemoQATest.Tests
 		public void Test_1_AreInputFieldEnabledAndDisplayed()
 		{
 			LoginPage loginPage = new LoginPage(Driver);
-			string loginPageUrl = ConfigReader.UrlLogin;
-			BasePage.OpenPage(loginPageUrl);
+			//string loginPageUrl = ConfigReader.UrlLogin;
+			BasePage.OpenPage(ConfigReader.UrlLogin);
 			BasePage.ClickDismiss();
 
 			Assert.Multiple(() =>

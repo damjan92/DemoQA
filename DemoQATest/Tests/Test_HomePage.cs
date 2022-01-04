@@ -19,10 +19,8 @@ namespace DemoQATest.Tests
 		public void Test_1_AreElementsVisible()
 		{
 			HomePage homePage = new HomePage(Driver);
-			string homePageUrl = ConfigReader.Url;
-			BasePage.OpenPage(homePageUrl);
+			BasePage.OpenPage(ConfigReader.Url);
 			BasePage.ClickDismiss();
-
 			Assert.Multiple(() =>
 			{
 				Assert.IsTrue(homePage.IsHeaderSectionVisible(), "Header is not visiable");
